@@ -1,5 +1,6 @@
-package br.com.bassi.DsList.entities;
+package br.com.bassi.DsList.domain;
 
+import br.com.bassi.DsList.dto.GameMinDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -29,5 +30,8 @@ public class Game {
     private String shortDescription;
     @Column(columnDefinition = "TEXT")
     private String longDescription;
+
+
+
 
 }
