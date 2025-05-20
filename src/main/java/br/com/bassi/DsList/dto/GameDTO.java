@@ -4,7 +4,7 @@ import br.com.bassi.DsList.domain.Game;
 import lombok.Getter;
 
 @Getter
-public class GameMinDTO {
+public class GameDTO {
 
     private Long id;
 
@@ -12,19 +12,31 @@ public class GameMinDTO {
 
     private Integer year;
 
+    private String genre;
+
+    private String platforms;
+
+    private Double score;
+
     private String imgUrl;
 
     private String shortDescription;
 
-    public GameMinDTO(){
+    private String longDescription;
+
+    public GameDTO() {
     }
 
-    public GameMinDTO(Game entity){
+    public GameDTO(Game entity) {
         this.id = entity.getId();
         this.title = entity.getTitle();
         this.year = entity.getYear();
+        this.genre = entity.getGenre();
+        this.platforms = entity.getPlatforms();
+        this.score = entity.getScore();
         this.imgUrl = entity.getImgUrl();
         this.shortDescription = entity.getShortDescription();
+        this.longDescription = entity.getLongDescription();
     }
 
 }
