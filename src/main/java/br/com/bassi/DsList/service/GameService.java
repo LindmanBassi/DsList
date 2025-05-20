@@ -3,6 +3,7 @@ package br.com.bassi.DsList.service;
 import br.com.bassi.DsList.domain.Game;
 import br.com.bassi.DsList.dto.GameDTO;
 import br.com.bassi.DsList.dto.GameMinDTO;
+import br.com.bassi.DsList.projections.GameMinProjection;
 import br.com.bassi.DsList.repositories.GameRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -31,4 +32,10 @@ public class GameService {
 
     }
 
+    @Transactional(readOnly = true)
+    public List<GameMinDTO> findByList(Long listId){
+        List<GameMinProjection> result = gameRepository.searchByList(listId);
+        return result.stream().map(x ->new GameMinDTO(x)).toList();
+
+    }
 }
